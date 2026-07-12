@@ -1,5 +1,9 @@
 function Pagination({ paginaActual, totalPaginas, cambiarPagina }) {
-    const paginas = Array.from({ length: totalPaginas }, (_, index) => index + 1);
+    const paginas = [];
+
+    for (let i = 1; i <= totalPaginas; i++) {
+        paginas.push(i);
+    }
 
     return (
         <div className="paginacion">
@@ -9,8 +13,8 @@ function Pagination({ paginaActual, totalPaginas, cambiarPagina }) {
 
             <div className="botones-paginacion">
                 <button
-                    disabled={paginaActual === 1}
                     onClick={() => cambiarPagina(paginaActual - 1)}
+                    disabled={paginaActual === 1}
                 >
                     Anterior
                 </button>
@@ -26,8 +30,8 @@ function Pagination({ paginaActual, totalPaginas, cambiarPagina }) {
                 ))}
 
                 <button
-                    disabled={paginaActual === totalPaginas}
                     onClick={() => cambiarPagina(paginaActual + 1)}
+                    disabled={paginaActual === totalPaginas}
                 >
                     Siguiente
                 </button>

@@ -36,7 +36,7 @@ function ProductsPage() {
         const parametros = new URLSearchParams();
 
         parametros.set("page", page);
-        parametros.set("limit", 10);
+        parametros.set("limit", limite);
 
         if (search) {
             parametros.set("search", search);
@@ -82,7 +82,9 @@ function ProductsPage() {
 
     const totalPaginas = Math.ceil(productosFiltrados.length / limite) || 1;
 
-    const inicio = (paginaActual - 1) * limite;
+    const paginaSegura = Math.min(paginaActual, totalPaginas);
+
+    const inicio = (paginaSegura - 1) * limite;
     const fin = inicio + limite;
     const productosPaginados = productosFiltrados.slice(inicio, fin);
 
@@ -186,7 +188,7 @@ function ProductsPage() {
             <div className="encabezado-seccion">
                 <div>
                     <h2>Gestión de Productos</h2>
-                    <p>Consulta, filtra y administra los productos registrados.</p>
+                    <p>Consulta, filtra y administra los productos de la cafetería.</p>
                 </div>
 
                 <button className="btn-principal" onClick={abrirModalAgregar}>
@@ -224,7 +226,7 @@ function ProductsPage() {
                     />
 
                     <Pagination
-                        paginaActual={paginaActual}
+                        paginaActual={paginaSegura}
                         totalPaginas={totalPaginas}
                         cambiarPagina={cambiarPagina}
                     />
