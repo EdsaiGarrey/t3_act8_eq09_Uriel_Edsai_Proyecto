@@ -1,0 +1,765 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+/* LOGIN */
+.login-page {
+    min-height: 100vh;
+    background: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-card {
+    width: 900px;
+    min-height: 520px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+.login-info {
+    background-color: #3b2416;
+    color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #d97706;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.login-info h1 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+}
+
+.login-info p {
+    font-size: 1rem;
+    color: #f8fafc;
+}
+
+.login-form {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-form h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.login-form p {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.login-form label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    font-size: 15px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 13px;
+    background-color: #d97706;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.login-form button:hover {
+    background-color: #b45309;
+}
+
+.login-form button:disabled {
+    background-color: #cbd5e1;
+    cursor: not-allowed;
+}
+
+.alerta-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.datos-prueba {
+    margin-top: 25px;
+    background-color: #f1f5f9;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.datos-prueba p {
+    margin: 4px 0;
+}
+
+/* LAYOUT */
+.app-layout {
+    min-height: 100vh;
+    display: flex;
+    background-color: #f8fafc;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #3b2416;
+    color: white;
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.logo-icon {
+    background-color: #d97706;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo h2 {
+    font-size: 1.2rem;
+}
+
+.logo p {
+    font-size: 0.8rem;
+    color: #d6c4b6;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu-item {
+    width: 100%;
+    text-align: left;
+    padding: 13px 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    color: #e7d8cc;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background-color: #6b3d16;
+    color: #f59e0b;
+}
+
+.main-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    height: 72px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+}
+
+.navbar h1 {
+    font-size: 1.3rem;
+}
+
+.usuario-navbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.foto-usuario {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.usuario-navbar p {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.btn-salir {
+    padding: 9px 12px;
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contenido {
+    padding: 32px;
+}
+
+/* DASHBOARD */
+.contenido-simple {
+    min-height: 70vh;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.icono-central {
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.contenido-simple p {
+    color: #64748b;
+}
+
+.acciones-dashboard button {
+    padding: 12px 18px;
+    background-color: #d97706;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* PRODUCTOS */
+.productos-page {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 26px;
+}
+
+.encabezado-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.encabezado-seccion h2 {
+    font-size: 1.8rem;
+}
+
+.encabezado-seccion p {
+    color: #64748b;
+    margin-top: 5px;
+}
+
+.btn-principal {
+    padding: 12px 16px;
+    background-color: #d97706;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filtros {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+}
+
+.filtros input,
+.filtros select {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    min-width: 220px;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+.tabla-productos {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-productos th {
+    background-color: #f8fafc;
+    color: #64748b;
+    text-align: left;
+    font-size: 13px;
+    padding: 14px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tabla-productos td {
+    padding: 14px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.estado {
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.estado.activo {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.estado.bajo {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.acciones-tabla {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-editar {
+    background-color: #d97706;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-eliminar {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.sin-datos {
+    text-align: center;
+    color: #64748b;
+}
+
+.mensaje-info {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.mensaje-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+/* PAGINACION */
+.paginacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 22px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.registros {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.registros select {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.botones-paginacion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.botones-paginacion button {
+    padding: 9px 12px;
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.botones-paginacion button:disabled {
+    color: #cbd5e1;
+    cursor: not-allowed;
+}
+
+.pagina-activa {
+    font-weight: bold;
+}
+
+/* MODAL */
+.modal-fondo {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    width: 420px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.modal-contenido h2 {
+    margin-bottom: 18px;
+}
+
+.modal-contenido label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.modal-contenido input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    margin-bottom: 14px;
+}
+
+.modal-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-cancelar {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    border: none;
+    padding: 10px 13px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-guardar {
+    background-color: #d97706;
+    color: white;
+    border: none;
+    padding: 10px 13px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .login-card {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+
+    .app-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .navbar {
+        height: auto;
+        padding: 18px;
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .encabezado-seccion {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .btn-numero {
+    min-width: 38px;
+    padding: 9px 12px;
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-numero.activo {
+    background-color: #d97706;
+    color: white;
+    border-color: #d97706;
+}
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .login-card {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+
+    .login-info,
+    .login-form {
+        padding: 35px;
+    }
+
+    .app-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+        flex-direction: row;
+        align-items: center;
+        overflow-x: auto;
+    }
+
+    .logo {
+        margin-bottom: 0;
+        min-width: 170px;
+    }
+
+    .menu {
+        flex-direction: row;
+        gap: 8px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .menu-item {
+        width: auto;
+        min-width: max-content;
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .main-area {
+        width: 100%;
+    }
+
+    .navbar {
+        height: auto;
+        padding: 15px;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .usuario-navbar {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .contenido {
+        padding: 16px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .contenido-simple {
+        min-height: 60vh;
+        padding: 20px;
+    }
+
+    .encabezado-seccion {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .productos-page {
+        padding: 16px;
+    }
+
+    .filtros {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filtros input,
+    .filtros select,
+    .filtros button,
+    .btn-principal {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .tabla-contenedor {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .tabla-productos {
+        min-width: 650px;
+        font-size: 12px;
+    }
+
+    .tabla-productos th,
+    .tabla-productos td {
+        padding: 10px;
+        white-space: nowrap;
+    }
+
+    .paginacion {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .botones-paginacion {
+        flex-wrap: wrap;
+    }
+
+    .btn-numero {
+        min-width: 38px;
+        padding: 9px 12px;
+        border: 1px solid #e2e8f0;
+        background-color: #ffffff;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .btn-numero.activo {
+        background-color: #d97706;
+        color: white;
+        border-color: #d97706;
+    }
+
+    .modal-contenido {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-info,
+    .login-form {
+        padding: 25px;
+    }
+
+    .login-info h1 {
+        font-size: 2rem;
+    }
+
+    .login-form h2 {
+        font-size: 1.6rem;
+    }
+
+    .sidebar {
+        align-items: flex-start;
+    }
+
+    .logo h2 {
+        font-size: 1rem;
+    }
+
+    .logo p {
+        font-size: 0.7rem;
+    }
+
+    .navbar h1 {
+        font-size: 1.1rem;
+    }
+
+    .contenido {
+        padding: 12px;
+    }
+
+    .encabezado-seccion h2 {
+        font-size: 1.4rem;
+    }
+
+    .tabla-productos {
+        min-width: 600px;
+    }
+
+    .contenido-simple h2 {
+        font-size: 1.3rem;
+    }
+
+    .contenido-simple p {
+        font-size: 14px;
+    }
+}
