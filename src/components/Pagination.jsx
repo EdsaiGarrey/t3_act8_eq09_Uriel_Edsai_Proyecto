@@ -1,3 +1,6 @@
+/* 
+funcion
+*/
 function Pagination({ paginaActual, totalPaginas, cambiarPagina }) {
     const paginas = [];
 

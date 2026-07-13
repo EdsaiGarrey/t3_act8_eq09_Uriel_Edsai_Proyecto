@@ -1,3 +1,6 @@
+/* 
+funcion
+*/
 function Sidebar({ vistaActual, cambiarVista }) {
     return (
         <aside className="sidebar">

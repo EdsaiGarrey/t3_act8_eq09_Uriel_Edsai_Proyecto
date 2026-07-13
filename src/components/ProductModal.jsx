@@ -1,3 +1,6 @@
+/* 
+funcion
+*/
 import { useEffect, useState } from "react";
 
 function ProductModal({ visible, productoEditar, onCerrar, onGuardar }) {

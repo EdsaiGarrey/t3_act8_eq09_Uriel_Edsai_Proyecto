@@ -1,3 +1,6 @@
+/* 
+funcion
+*/
 function Navbar({ usuario, titulo, cerrarSesion }) {
     return (
         <header className="navbar">

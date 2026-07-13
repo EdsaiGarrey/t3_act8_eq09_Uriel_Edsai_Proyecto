@@ -1,3 +1,6 @@
+/* 
+funcion
+*/
 function ProductTable({ productos, onEditar, onEliminar }) {
     return (
         <div className="tabla-contenedor">
