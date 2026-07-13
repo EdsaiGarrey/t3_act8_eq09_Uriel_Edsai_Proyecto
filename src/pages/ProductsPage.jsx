@@ -147,14 +147,48 @@ function ProductsPage() {
 
                 alert("Producto editado correctamente.");
             } else {
+                /*
+                  Aquí sí se hace la petición real a la API.
+                  DummyJSON responde, pero normalmente devuelve el ID 195.
+                */
                 const nuevoProductoAPI = await agregarProducto(productoFormulario);
 
+                /*
+                  Como DummyJSON simula el agregado, generamos un ID local
+                  consecutivo para que la tabla quede ordenada:
+                  31, 32, 33...
+                */
+                const idsValidos = productos
+                    .map((producto) => Number(producto.id))
+                    .filter((id) => !isNaN(id) && id < 190);
+
+                const siguienteId = idsValidos.length > 0
+                    ? Math.max(...idsValidos) + 1
+                    : 1;
+
                 const nuevoProducto = {
+                    ...nuevoProductoAPI,
                     ...productoFormulario,
-                    id: nuevoProductoAPI.id || Date.now()
+                    id: siguienteId
                 };
 
-                setProductos([nuevoProducto, ...productos]);
+                /*
+                  Se agrega al final para que aparezca después del #30,
+                  no arriba de la tabla.
+                */
+                const nuevaListaProductos = [...productos, nuevoProducto];
+
+                setProductos(nuevaListaProductos);
+
+                /*
+                  Después de agregar, mandamos al usuario a la última página,
+                  donde estará el nuevo producto.
+                */
+                const nuevaCantidadPaginas = Math.ceil(nuevaListaProductos.length / limite);
+
+                setPaginaActual(nuevaCantidadPaginas);
+                actualizarURL(nuevaCantidadPaginas, busqueda, categoria);
+
                 alert("Producto agregado correctamente.");
             }
 
@@ -175,7 +209,27 @@ function ProductsPage() {
         try {
             await eliminarProducto(id);
 
-            setProductos(productos.filter((producto) => producto.id !== id));
+            const nuevaListaProductos = productos.filter((producto) => producto.id !== id);
+
+            setProductos(nuevaListaProductos);
+
+            const nuevosProductosFiltrados = nuevaListaProductos.filter((producto) => {
+                const coincideBusqueda = producto.title
+                    .toLowerCase()
+                    .includes(busqueda.toLowerCase());
+
+                const coincideCategoria =
+                    categoria === "todas" || producto.category === categoria;
+
+                return coincideBusqueda && coincideCategoria;
+            });
+
+            const nuevasPaginas = Math.ceil(nuevosProductosFiltrados.length / limite) || 1;
+
+            if (paginaActual > nuevasPaginas) {
+                setPaginaActual(nuevasPaginas);
+                actualizarURL(nuevasPaginas, busqueda, categoria);
+            }
 
             alert("Producto eliminado correctamente.");
         } catch (error) {

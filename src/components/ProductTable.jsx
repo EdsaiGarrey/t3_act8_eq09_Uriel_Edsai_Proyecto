@@ -8,7 +8,7 @@ function ProductTable({ productos, onEditar, onEliminar }) {
                         <th>Producto</th>
                         <th>Categoría</th>
                         <th>Precio</th>
-                        <th>Stock</th>
+                        <th>Existencia</th>
                         <th>Estado</th>
                         <th>Acciones</th>
                     </tr>

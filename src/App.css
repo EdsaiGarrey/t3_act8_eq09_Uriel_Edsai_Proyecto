@@ -55,6 +55,8 @@ body {
 .login-info h1 {
     font-size: 2.4rem;
     margin-bottom: 12px;
+    color: #fbbf24;
+    font-weight: 800;
 }
 
 .login-info p {
@@ -72,6 +74,8 @@ body {
 .login-form h2 {
     font-size: 2rem;
     margin-bottom: 8px;
+    color: #d97706;
+    font-weight: 800;
 }
 
 .login-form p {
@@ -220,6 +224,8 @@ body {
 
 .navbar h1 {
     font-size: 1.3rem;
+    color: #d97706;
+    font-weight: 800;
 }
 
 .usuario-navbar {
@@ -309,6 +315,8 @@ body {
 
 .encabezado-seccion h2 {
     font-size: 1.8rem;
+    color: #d97706;
+    font-weight: 800;
 }
 
 .encabezado-seccion p {
@@ -526,54 +534,164 @@ body {
     border-radius: 8px;
     cursor: pointer;
 }
+/* ==============================
+   COLORES VISIBLES GENERALES
+   ============================== */
 
-/* RESPONSIVE */
-@media (max-width: 850px) {
-    .login-card {
-        grid-template-columns: 1fr;
-        width: 95%;
-    }
-
-    .app-layout {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-    }
-
-    .navbar {
-        height: auto;
-        padding: 18px;
-        flex-direction: column;
-        gap: 15px;
-        align-items: flex-start;
-    }
-
-    .encabezado-seccion {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .btn-numero {
-    min-width: 38px;
-    padding: 9px 12px;
-    border: 1px solid #e2e8f0;
-    background-color: #ffffff;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
+/* Login */
+.login-form h2 {
+    color: #d97706 !important;
+    font-weight: 900 !important;
 }
 
-.btn-numero.activo {
-    background-color: #d97706;
-    color: white;
-    border-color: #d97706;
-}
+.login-form p {
+    color: #334155 !important;
+    font-weight: 500 !important;
 }
 
-/* RESPONSIVE */
+.login-form label {
+    color: #0f172a !important;
+}
+
+.login-info h1 {
+    color: #fbbf24 !important;
+    font-weight: 900 !important;
+}
+
+.login-info p {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+}
+
+/* Navbar */
+.navbar h1 {
+    color: #d97706 !important;
+    font-weight: 900 !important;
+}
+
+.usuario-navbar strong,
+.usuario-navbar span,
+.usuario-navbar p {
+    color: #1e293b !important;
+}
+
+/* Dashboard */
+.contenido-simple h1,
+.contenido-simple h2 {
+    color: #d97706 !important;
+    font-weight: 900 !important;
+    font-size: 2rem !important;
+    text-shadow: none !important;
+}
+
+.contenido-simple p {
+    color: #1e293b !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+}
+
+/* Productos */
+.encabezado-seccion h2 {
+    color: #d97706 !important;
+    font-weight: 900 !important;
+}
+
+.encabezado-seccion p {
+    color: #334155 !important;
+    font-weight: 500 !important;
+}
+
+/* Filtros */
+.filtros input,
+.filtros select {
+    background-color: #ffffff !important;
+    color: #1e293b !important;
+    border: 1px solid #cbd5e1 !important;
+    font-weight: 500 !important;
+}
+
+.filtros input::placeholder {
+    color: #64748b !important;
+}
+
+/* Tabla */
+.tabla-productos th {
+    background-color: #f1f5f9 !important;
+    color: #334155 !important;
+    font-weight: 900 !important;
+}
+
+.tabla-productos td {
+    color: #0f172a !important;
+    font-weight: 500 !important;
+}
+
+/* Paginación / pestañas de productos */
+.paginacion {
+    color: #1e293b !important;
+}
+
+.registros,
+.registros span {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+
+.botones-paginacion button,
+.btn-numero {
+    background-color: #ffffff !important;
+    color: #1e293b !important;
+    border: 1px solid #cbd5e1 !important;
+    font-weight: 700 !important;
+}
+
+.botones-paginacion button:hover,
+.btn-numero:hover {
+    background-color: #fef3c7 !important;
+    color: #92400e !important;
+}
+
+.btn-numero.activo,
+.pagina-activa {
+    background-color: #d97706 !important;
+    color: #ffffff !important;
+    border-color: #d97706 !important;
+}
+
+.botones-paginacion button:disabled {
+    background-color: #f8fafc !important;
+    color: #94a3b8 !important;
+    cursor: not-allowed !important;
+}
+
+/* Modal */
+.modal-contenido h2,
+.modal-contenido label {
+    color: #1e293b !important;
+}
+
+.modal-contenido input {
+    color: #1e293b !important;
+    background-color: #ffffff !important;
+}
+
+/* Mensajes */
+.mensaje-info {
+    background-color: #eff6ff !important;
+    color: #1d4ed8 !important;
+    font-weight: 600 !important;
+}
+
+.mensaje-error {
+    background-color: #fee2e2 !important;
+    color: #991b1b !important;
+    font-weight: 600 !important;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
 @media (max-width: 850px) {
     .login-card {
         grid-template-columns: 1fr;
@@ -644,14 +762,14 @@ body {
         padding: 20px;
     }
 
+    .productos-page {
+        padding: 16px;
+    }
+
     .encabezado-seccion {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
-    }
-
-    .productos-page {
-        padding: 16px;
     }
 
     .filtros {
@@ -692,22 +810,6 @@ body {
         flex-wrap: wrap;
     }
 
-    .btn-numero {
-        min-width: 38px;
-        padding: 9px 12px;
-        border: 1px solid #e2e8f0;
-        background-color: #ffffff;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: bold;
-    }
-
-    .btn-numero.activo {
-        background-color: #d97706;
-        color: white;
-        border-color: #d97706;
-    }
-
     .modal-contenido {
         width: 90%;
     }
@@ -720,11 +822,11 @@ body {
     }
 
     .login-info h1 {
-        font-size: 2rem;
+        font-size: 2rem !important;
     }
 
     .login-form h2 {
-        font-size: 1.6rem;
+        font-size: 1.6rem !important;
     }
 
     .sidebar {
@@ -740,7 +842,7 @@ body {
     }
 
     .navbar h1 {
-        font-size: 1.1rem;
+        font-size: 1.1rem !important;
     }
 
     .contenido {
@@ -748,7 +850,7 @@ body {
     }
 
     .encabezado-seccion h2 {
-        font-size: 1.4rem;
+        font-size: 1.4rem !important;
     }
 
     .tabla-productos {
@@ -756,10 +858,10 @@ body {
     }
 
     .contenido-simple h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem !important;
     }
 
     .contenido-simple p {
-        font-size: 14px;
+        font-size: 14px !important;
     }
 }
